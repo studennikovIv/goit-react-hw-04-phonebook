@@ -1,7 +1,6 @@
 import React from 'react';
 import css from './ContactList.module.css';
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
 
 const ContactList = ({ contacts, onClick }) => (
   <ul className={css.contactList}>
