@@ -1,6 +1,6 @@
 .conteiner-contact{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 25% 75%;
 }
 .page-header {
   color:  #59ce8f;
@@ -15,7 +15,7 @@
 
 }
 .contact-left-box{
-  width: 25%;
+  width: 100%%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,4 +25,10 @@
   font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
+}
+.dont-found{
+  margin: auto;
+  font-size: 32px;
+  color:#59ce8f;
+  font-weight: 700;
 }

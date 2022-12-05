@@ -71,7 +71,7 @@ const App = () => {
         {contacts.length !== 0 ? (
           <ContactList onClick={deletContact} contacts={filterContact} />
         ) : (
-          <p>Contact dont found</p>
+          <p className="dont-found">Contact dont found</p>
         )}
       </div>
     </>
