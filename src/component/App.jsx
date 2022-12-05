@@ -19,16 +19,16 @@ const App = () => {
       { id: '4', name: 'Francis', number: '845-826-2280' },
     ]
   );
-  const [filterContact, setFilterContact] = useState([]);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    const filterContactsList = contacts.filter(contact => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
+
+  const filterContactsList = () =>
+    contacts.filter(contact => {
       return contact.name.toLowerCase().includes(filter.toLowerCase());
     });
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-    setFilterContact(filterContactsList);
-  }, [filter, contacts]);
 
   const addContacts = (name, number) => {
     const id = nanoid();
@@ -69,7 +69,7 @@ const App = () => {
           <Filter value={filter} onChange={filterChange} />
         </div>
         {contacts.length !== 0 ? (
-          <ContactList onClick={deletContact} contacts={filterContact} />
+          <ContactList onClick={deletContact} contacts={filterContactsList()} />
         ) : (
           <p className="dont-found">Contact dont found</p>
         )}
